@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+h1.titleo{
+  text-align:center;
+  font-size: 80px;
+  border-top: solid 4px;
+  border-bottom: solid 4px;
+  border-color: #ddd;
+  background-image: url(https://cdn.discordapp.com/attachments/930730608391499816/943050209758429204/makesweet-qkjhbu.gif);
+  color: #fff;
+  background-position: center;
+  -webkit-text-stroke: 1px #0061fe;
+  text-stroke: 1px #0061fe;
+}
+h1{
+  font-size:50px;
+}
+body {
+   font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.side {
+  width:10em;
+  text-align:center;
+  border-right: 4px solid; 
+  border-top: 4px solid; 
+  border-color: #ddd;
+} 
+
+.content {
+  width:56em;
+  text-align:center;
+  margin-left:10px;/*サイドバーとメインコンテンツの間に隙間    
+  をあけた*/
+}
+
+article {
+  display:flex;/*サイドバーとメインコンテンツを横並びにする                指定をした*/
+}
+p{
+  text-align: left;
+}
