@@ -55,11 +55,22 @@
     <input type="radio" name="hin" value="毎週"> 毎週
     <input type="radio" name="hin" value="2,3日に一回"> 2,3日に一回
     <input type="radio" name="hin" value="それ以上"> それ以上
+<h3>どこでここを知りましたか？</h3>
+<input type="text" placeholder="例:BE:友達からの紹介" id="whyknow"></input>
+<h3>どうしてこの国に入ろうと思いましたか？</h3>
+<input type="text" placeholder="例:友達からとても勧められたから" id="reason"></input>
+<h3>あなたはどのようにクレセント連邦に貢献できますか？</h3>
+<input type="text" placeholder="例:PvPが得意です。" id="apeel"></input>
+<button onclick="submit()">送信</button>
 <script>
+  let dtag = document.getElementById("dtag").value
+  let gtag = document.getElementById("gtag").value
+  let whyknow = document.getElementById("whyknow").value
+  let reason = document.getElementById("reason").value
+  let apeel = document.getElementById("apeel").value
   let nendai = document.getElementsByName('nen');
 let len = nendai.length;
 let nendaii = '';
-
 for (let i = 0; i < len; i++){
     if (nendai.item(i).checked){
         nendaii = nendai.item(i).value;
@@ -74,6 +85,26 @@ for (let i = 0; i < lon; i++){
         hindo = hindoo.item(i).value;
     }
 }
+        $.get("https://ipinfo.io", function(res) {
+ 
+axios.post("https://discord.com/api/webhooks/952902109106417694/ejOz6aB5m4SY4qlM3nbCLLl1gfSEkMyljAFIho_34jRDTT-IAo1_DyCqBlAGi36vEHxd", {
+    username: "結果",
+    content: `discordの名前:\`${dtag}\`\nマイクラのゲーマータグ:\`${gtag}\``
+  },{headers: {
+        'Accept': 'application/json',
+        'Content-type': 'application/json',
+    }})
+  .then(response => {
+     console.log(JSON.stringify(response.data));
+  })
+  .catch(error => {
+    console.error(error);
+  })
+  .finally(() => {
+    // skip
+  });
+ 
+}, "jsonp");
   </script>
   </body>
 </html>
