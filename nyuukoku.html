@@ -49,6 +49,12 @@
     <input type="radio" name="nen" value="15歳以下"> 15歳以下
     <input type="radio" name="nen" value="18歳以下"> 18歳以下
     <input type="radio" name="nen" value="19歳以上"> 19歳以下
+<h3> 参加頻度を教えてください。 </h3>
+    <input type="radio" name="hin" value="月に一回"> 月に一回
+    <input type="radio" name="hin" value="二週間に一回"> 2週間に一回
+    <input type="radio" name="hin" value="毎週"> 毎週
+    <input type="radio" name="hin" value="2,3日に一回"> 2,3日に一回
+    <input type="radio" name="hin" value="それ以上"> それ以上
 <script>
   let nendai = document.getElementsByName('nen');
 let len = nendai.length;
@@ -56,7 +62,16 @@ let nendaii = '';
 
 for (let i = 0; i < len; i++){
     if (nendai.item(i).checked){
-        checkValue = nendai.item(i).value;
+        nendaii = nendai.item(i).value;
+    }
+}
+  let hindoo = document.getElementsByName('hin');
+let lon = hindoo.length;
+let hindo = '';
+
+for (let i = 0; i < lon; i++){
+    if (hindoo.item(i).checked){
+        hindo = hindoo.item(i).value;
     }
 }
   </script>
