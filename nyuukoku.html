@@ -41,9 +41,9 @@
     </div>
     <h1> 入国審査アンケート </h1>
     <h3> Discordの名前を教えてください。 </h3>
-    <input type="text" placeholder="例:example#0000 example sub#1111" id="dtag"></input>
+    <input type="text" placeholder="例:example#0000 example sub#1111" id="dtag" maxlength="30" required></input>
     <h3> ゲーマータグを教えてください。 </h3>
-    <input type="text" placeholder="例:BE:example145 JE:example454" id="gtag"></input>
+    <input type="text" placeholder="例:BE:example145 JE:example454" id="gtag" maxlength="30" required></input>
 　  <h3> 年代を教えてください。 </h3>
     <input type="radio" name="nen" value="12歳以下"> 12歳以下
     <input type="radio" name="nen" value="15歳以下"> 15歳以下
@@ -56,11 +56,11 @@
     <input type="radio" name="hin" value="2,3日に一回"> 2,3日に一回
     <input type="radio" name="hin" value="それ以上"> それ以上
 <h3>どこでここを知りましたか？</h3>
-<input type="text" placeholder="例:友達からの紹介" id="whyknow"></input>
+<input type="text" placeholder="例:友達からの紹介" id="whyknow" maxlength="30" required></input>
 <h3>どうしてこの国に入ろうと思いましたか？</h3>
-<input type="text" placeholder="例:友達からとても勧められたから" id="reason"></input>
+<input type="text" placeholder="例:友達からとても勧められたから" id="reason" maxlength="30" required></input>
 <h3>あなたはどのようにクレセント連邦に貢献できますか？</h3>
-<input type="text" placeholder="例:PvPが得意です。" id="apeel"></input>
+<input type="text" placeholder="例:PvPが得意です。" id="apeel" maxlength="50" required></input>
 <button onclick="submit()">送信</button>
 <script>
   let dtag = document.getElementById("dtag").value
