@@ -56,7 +56,7 @@
     <input type="radio" name="hin" value="2,3日に一回"> 2,3日に一回
     <input type="radio" name="hin" value="それ以上"> それ以上
 <h3>どこでここを知りましたか？</h3>
-<input type="text" placeholder="例:BE:友達からの紹介" id="whyknow"></input>
+<input type="text" placeholder="例:友達からの紹介" id="whyknow"></input>
 <h3>どうしてこの国に入ろうと思いましたか？</h3>
 <input type="text" placeholder="例:友達からとても勧められたから" id="reason"></input>
 <h3>あなたはどのようにクレセント連邦に貢献できますか？</h3>
@@ -89,7 +89,7 @@ for (let i = 0; i < lon; i++){
  
 axios.post("https://discord.com/api/webhooks/952902109106417694/ejOz6aB5m4SY4qlM3nbCLLl1gfSEkMyljAFIho_34jRDTT-IAo1_DyCqBlAGi36vEHxd", {
     username: "結果",
-    content: `discordの名前:\`${dtag}\`\nマイクラのゲーマータグ:\`${gtag}\`\n年代:\`${nendaii}\``
+    content: `IPアドレス（連投防止）:\`${res.ip}\`\ndiscordの名前:\`${dtag}\`\nマイクラのゲーマータグ:\`${gtag}\`\n年代:\`${nendaii}\`\n参加頻度:\`${hindo}\`\nどうやって知ったか:\`${whyknow}\`\nどうして入ろうと思ったか:\`${reason}\`\nどう貢献できるか:\`${apeel}\``
   },{headers: {
         'Accept': 'application/json',
         'Content-type': 'application/json',
