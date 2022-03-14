@@ -49,5 +49,16 @@
     <input type="radio" name="nen" value="15歳以下"> 15歳以下
     <input type="radio" name="nen" value="18歳以下"> 18歳以下
     <input type="radio" name="nen" value="19歳以上"> 19歳以下
+<script>
+  let nendai = document.getElementsByName('nen');
+let len = nendai.length;
+let nendaii = '';
+
+for (let i = 0; i < len; i++){
+    if (nendai.item(i).checked){
+        checkValue = nendai.item(i).value;
+    }
+}
+  </script>
   </body>
 </html>
