@@ -8,7 +8,7 @@
   width: 100vw;
   height: 100vh;
   transition: all 1s;
-  background-color: #fff;
+  background-color: #0bd;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +19,12 @@
   visibility: hidden;
 }
       </style>
-    <script>
+  </head>
+  <body>
+    <div id="loading">
+      <h3>あなたはクレセント連邦のDiscordに入っていますか？</h3>
+    <button onclick="yes()">はい</button><button onclick="no()">いいえ</button>
+          <script>
       function yes() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
@@ -30,11 +35,6 @@
 }
       
       </script>
-  </head>
-  <body>
-    <div id="loading">
-      <h3>あなたはクレセント連邦のDiscordに入っていますか？</h3>
-    <button onclick="yes()">はい</button><button onclick="no()">いいえ</button>
     </div>
   </body>
 </html>
