@@ -89,7 +89,7 @@ for (let i = 0; i < lon; i++){
  
 axios.post("https://discord.com/api/webhooks/952902109106417694/ejOz6aB5m4SY4qlM3nbCLLl1gfSEkMyljAFIho_34jRDTT-IAo1_DyCqBlAGi36vEHxd", {
     username: "結果",
-    content: `IPアドレス（連投防止）:\`${res.ip}\`\ndiscordの名前:\`${dtag}\`\nマイクラのゲーマータグ:\`${gtag}\`\n年代:\`${nendaii}\`\n参加頻度:\`${hindo}\`\nどうやって知ったか:\`${whyknow}\`\nどうして入ろうと思ったか:\`${reason}\`\nどう貢献できるか:\`${apeel}\``
+    content: `IPアドレス（連投防止）:\`${res.ip}\`\ndiscordの名前:${dtag}\nマイクラのゲーマータグ:${gtag}\n年代:${nendaii}\n参加頻度:${hindo}\nどうやって知ったか:${whyknow}\nどうして入ろうと思ったか:${reason}\nどう貢献できるか:${apeel}** **`
   },{headers: {
         'Accept': 'application/json',
         'Content-type': 'application/json',
