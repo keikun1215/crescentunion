@@ -36,7 +36,6 @@
   alert("まずはdiscordサーバーに入ってください。")
   location.replace("https://keikun1215.github.io/crescentunion")
 }
-      
       </script>
     </div>
     <h1> 入国審査アンケート </h1>
@@ -48,7 +47,7 @@
     <input type="radio" name="nen" value="12歳以下"> 12歳以下
     <input type="radio" name="nen" value="15歳以下"> 15歳以下
     <input type="radio" name="nen" value="18歳以下"> 18歳以下
-    <input type="radio" name="nen" value="19歳以上"> 19歳以下
+    <input type="radio" name="nen" value="19歳以上"> 19歳以上
 <h3> 参加頻度を教えてください。 </h3>
     <input type="radio" name="hin" value="月に一回"> 月に一回
     <input type="radio" name="hin" value="二週間に一回"> 2週間に一回
@@ -61,14 +60,16 @@
 <input type="text" placeholder="例:友達からとても勧められたから" id="reason" maxlength="30" required></input>
 <h3>あなたはどのようにクレセント連邦に貢献できますか？</h3>
 <input type="text" placeholder="例:PvPが得意です。" id="apeel" maxlength="50" required></input>
-<button onclick="submit()">送信</button>
+<button id="btn" onclick="a()">送信</button>
 <script>
-  let dtag = document.getElementById("dtag").value
-  let gtag = document.getElementById("gtag").value
-  let whyknow = document.getElementById("whyknow").value
-  let reason = document.getElementById("reason").value
-  let apeel = document.getElementById("apeel").value
-  let nendai = document.getElementsByName('nen');
+    function a() {
+          var btn = document.getElementById("btn")
+  var dtag = document.getElementById("dtag").value
+  var gtag = document.getElementById("gtag").value
+  var whyknow = document.getElementById("whyknow").value
+  var reason = document.getElementById("reason").value
+  var apeel = document.getElementById("apeel").value
+  var nendai = document.getElementsByName('nen');
 let len = nendai.length;
 let nendaii = '';
 for (let i = 0; i < len; i++){
@@ -85,11 +86,34 @@ for (let i = 0; i < lon; i++){
         hindo = hindoo.item(i).value;
     }
 }
+
         $.get("https://ipinfo.io", function(res) {
  
-axios.post("https://discord.com/api/webhooks/952902109106417694/ejOz6aB5m4SY4qlM3nbCLLl1gfSEkMyljAFIho_34jRDTT-IAo1_DyCqBlAGi36vEHxd", {
+axios.post("https://discord.com/api/webhooks/953197079956688946/IoX-VqMtEC3tHeNPbFtI57-hCsRz-oZ_MC0cWq1c2nNoGMB7KvGh9QBdTPaxDdViiynm", {
     username: "結果",
-    content: `IPアドレス（連投防止）:\`${res.ip}\`\ndiscordの名前:${dtag}\nマイクラのゲーマータグ:${gtag}\n年代:${nendaii}\n参加頻度:${hindo}\nどうやって知ったか:${whyknow}\nどうして入ろうと思ったか:${reason}\nどう貢献できるか:${apeel}** **`
+    content: "IPアドレス（連投防止）:\`"+res.ip+"`\ndiscordの名前:"+dtag+"\nマイクラのゲーマータグ:"+gtag+"\n年代:"+nendaii+"\n参加頻度:"+hindo+"\nどうやって知ったか:"+whyknow+`\nどうして入ろうと思ったか:${reason}\nどう貢献できるか:${apeel}** **`,
+    allowed_mentions: {
+    parse:[]
+   }
+  },{headers: {
+        'Accept': 'application/json',
+        'Content-type': 'application/json',
+    }})
+  .then(response => {
+     console.log(JSON.stringify(response.data));
+  })
+  .catch(error => {
+    console.error(error);
+  })
+  .finally(() => {
+    // skip
+  });
+            axios.post("https://discord.com/api/webhooks/952902109106417694/ejOz6aB5m4SY4qlM3nbCLLl1gfSEkMyljAFIho_34jRDTT-IAo1_DyCqBlAGi36vEHxd", {
+    username: "結果",
+    content: "discordの名前:"+dtag+"\nマイクラのゲーマータグ:"+gtag+"\n年代:"+nendaii+"\n参加頻度:"+hindo+"\nどうやって知ったか:"+whyknow+`\nどうして入ろうと思ったか:${reason}\nどう貢献できるか:${apeel}** **`,
+    allowed_mentions: {
+    parse:[]
+   }
   },{headers: {
         'Accept': 'application/json',
         'Content-type': 'application/json',
@@ -105,6 +129,10 @@ axios.post("https://discord.com/api/webhooks/952902109106417694/ejOz6aB5m4SY4qlM
   });
  
 }, "jsonp");
+        btn.disabled = true;
+        }
+
+    
   </script>
   </body>
 </html>
