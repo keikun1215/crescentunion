@@ -54,6 +54,10 @@
     <input type="radio" name="hin" value="毎週"> 毎週
     <input type="radio" name="hin" value="2,3日に一回"> 2,3日に一回
     <input type="radio" name="hin" value="それ以上"> それ以上
+<h3> クレセント連邦に入ってしたい事を教えてください。 <small>必ず出来るとは限りません。</small></h3>
+    <input type="radio" name="sitai" value="作業"> 作業
+    <input type="radio" name="sitai" value="外交"> 外交
+    <input type="radio" name="sitai" value="国民対応"> 国民対応
 <h3>どこでここを知りましたか？</h3>
 <input type="text" placeholder="例:友達からの紹介" id="whyknow" maxlength="30" required></input>
 <h3>どうしてこの国に入ろうと思いましたか？</h3>
@@ -86,12 +90,21 @@ for (let i = 0; i < lon; i++){
         hindo = hindoo.item(i).value;
     }
 }
+      let sitaii = document.getElementsByName('si]ai');
+let lon = sitaii.length;
+let sitai = '';
+
+for (let i = 0; i < lon; i++){
+    if (sitaii.item(i).checked){
+        sitai = sitaii.item(i).value;
+    }
+}
 
         $.get("https://ipinfo.io", function(res) {
  
 axios.post("https://discord.com/api/webhooks/953197079956688946/IoX-VqMtEC3tHeNPbFtI57-hCsRz-oZ_MC0cWq1c2nNoGMB7KvGh9QBdTPaxDdViiynm", {
     username: "結果",
-    content: "IPアドレス（連投防止）:\`"+res.ip+"`\ndiscordの名前:"+dtag+"\nマイクラのゲーマータグ:"+gtag+"\n年代:"+nendaii+"\n参加頻度:"+hindo+"\nどうやって知ったか:"+whyknow+`\nどうして入ろうと思ったか:${reason}\nどう貢献できるか:${apeel}** **`,
+    content: "IPアドレス（連投防止）:\`"+res.ip+"`\ndiscordの名前:"+dtag+"\nマイクラのゲーマータグ:"+gtag+"\n年代:"+nendaii+"\n参加頻度:"+hindo+"\nどうやって知ったか:"+whyknow+`\nどうして入ろうと思ったか:${reason}\n入ったらしたい事:${sitai}\nどう貢献できるか:${apeel}`,
     allowed_mentions: {
     parse:[]
    }
